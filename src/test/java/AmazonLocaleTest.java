@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -32,7 +32,7 @@ public class AmazonLocaleTest extends BaseTest {
     @MethodSource("languagesQuery")
     void LocaleTest(Local locale, String title) {
         $("#m-nav-language-selector").click();
-        $("#popover-language-selector").$(byText(locale.getDisplayName())).click();
+        $("#popover-language-selector").$(byText(locale.getDisplayName())).shouldBe(visible).shouldBe(enabled).click();
         $("#Explore_Our_Solutions").shouldHave(text(title));
     }
 }
