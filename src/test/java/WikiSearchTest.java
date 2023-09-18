@@ -2,6 +2,7 @@
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+
 import java.util.stream.Stream;
 
 import static com.codeborne.selenide.Condition.text;
@@ -23,7 +24,7 @@ public class WikiSearchTest extends BaseTest {
     })
 
     @DisplayName("Проверка поиска в Wikipedia.org")
-    @ParameterizedTest( name = "После ввода и поиска {0} отобразилась страница с информацией {0}")
+    @ParameterizedTest(name = "После ввода и поиска {0} отобразилась страница с информацией {0}")
     @MethodSource("searchQuery")
 
     public void SearchTest(String searchQuery) {
