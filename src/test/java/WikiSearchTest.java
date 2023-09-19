@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class WikiSearchTest extends BaseTest {
     @BeforeEach
-    public void Page() {
+    public void page() {
         open("https://www.wikipedia.org/");
     }
 
@@ -27,7 +27,7 @@ public class WikiSearchTest extends BaseTest {
     @ParameterizedTest(name = "После ввода и поиска {0} отобразилась страница с информацией {0}")
     @MethodSource("searchQuery")
 
-    public void SearchTest(String searchQuery) {
+    public void searchTest(String searchQuery) {
 
         $("#searchInput").setValue(searchQuery);
         $(".pure-button-primary-progressive").click();

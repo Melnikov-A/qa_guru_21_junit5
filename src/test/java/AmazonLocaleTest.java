@@ -30,7 +30,7 @@ public class AmazonLocaleTest extends BaseTest {
     @DisplayName("Проверка текста страницы в зависимости от локации")
     @ParameterizedTest(name = "При смене локации на {0} отображается {1}")
     @MethodSource("languagesQuery")
-    void LocaleTest(Local locale, String title) {
+    void localeTest(Local locale, String title) {
         $("#m-nav-language-selector").click();
         $("#popover-language-selector").$(byText(locale.getDisplayName())).shouldBe(visible).shouldBe(enabled).click();
         $("#Explore_Our_Solutions").shouldHave(text(title));
