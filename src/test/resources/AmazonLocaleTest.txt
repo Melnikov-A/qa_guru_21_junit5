@@ -1,0 +1,16 @@
+0) TEST_DATA:
+[
+   ['English', 'Explore Our Solutions'],
+   ['Italiano', 'Esplora le nostre soluzioni']
+]
+
+1) ЗАГОЛОВОК: "При смене локации 'TEST_DATA[0]' выводится текст 'TEST_DATA[1]'"
+2) ВЫСОКИЙ
+3) ПРЕДУСЛОВИЯ: -Открыт браузер Google Chrome, сайт https://aws.amazon.com
+
+4) ШАГИ
+- Нажать на раскрывающийся список локалей
+- Нажать на выбранную 'TEST_DATA[0]' локаль
+
+5) ОЖИДАЕМЫЙ РЕЗУЛЬТАТ:
+- На странице отображается текст TEST_DATA[1]
